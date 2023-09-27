@@ -2,3 +2,5 @@
 node_modules/
 //jsファイルが生成されるディレクトリも管理対象外
 dist/
+//導入メモも管理対象外
+installmemo.ttx
