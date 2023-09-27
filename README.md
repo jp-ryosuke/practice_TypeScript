@@ -14,8 +14,8 @@ npm init --yes
 "type": "module",
 
 npm install --save-dev typescript@4.6.2 @types/node@14.14.10
-//tsconfig.json を変更
 
+//tsconfig.json を変更
 "target": "es2016", 
 ↓
 "target": "es2020",
