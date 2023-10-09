@@ -11,3 +11,9 @@ const small = 4e-5;
 
 //100000000 0.00004
 console.log(big, small);
+
+//数値リテラルは数字の間に_を挟むことが許可されている
+const million = 1_000_000;
+
+//1000000
+console.log(million);
