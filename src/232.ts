@@ -6,5 +6,4 @@ const area = (width1 + width2) * height / 2;
 
 //19.5
 console.log(area);
-
 console.log(3.5 * 2);
