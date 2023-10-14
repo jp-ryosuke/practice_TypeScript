@@ -48,3 +48,29 @@ console.log(num3);
 
 const num4 = Number(undefined);
 console.log(num4);
+
+/*
+その他の変換もざっと眺めてみましょう
+数値への変換は Number 関数を使いましたが文字列への変換には String 関数を
+真偽値への変換は Boolean 関数をつかいます
+また BigInt への変換には BigInt 関数を使います
+BigInt への変換も次のように、数値文字列真偽値などから可能です
+改めての注意になりますが number と BigInt は別物なので注意しましょう
+*/
+
+const bigint1 = BigInt("1234");
+console.log(bigint1); //1234n
+
+const bigint2 = BigInt("500");
+console.log(bigint2); //500n
+
+const bigint3 = BigInt(true);
+console.log(bigint3); //1n
+
+/*
+ただし BigInt には NaN に相当する値がないため注意が必要です
+BigInt("foobar") とかのおうに数値を表しておらず BigInt への変換が不可能の値が渡された場合の挙動はランタイムエラーとなる
+小数を渡した場合にもあはり乱打医務エラーとなるので注意が必要
+いわゆる例外となるので try-catch で例外処理しないと強制終了してしまう
+*/
+
