@@ -74,3 +74,50 @@ BigInt("foobar") とかのおうに数値を表しておらず BigInt への変�
 いわゆる例外となるので try-catch で例外処理しないと強制終了してしまう
 */
 
+/*
+const bigint = BigInt("fooooo");
+console.log("bigint is", bigint);
+*/
+
+/*
+const bigint = BigInt("fooooo");
+SyntaxError: Cannot convert fooooo to a BigInt
+
+コンパイルは成功するがランタイムエラーが発生した
+*/
+
+//次は String の場合
+
+//数値から文字列へ
+const str1 = String(1234.5);
+console.log(str1); //"1234.5"
+
+//真偽値から文字列へ
+const str2 = String(true);
+console.log(str2); //true
+
+// null や undefined も文字列に変換可能
+const str3 = String(null);
+const str4 = String(undefined);
+console.log(str3, str4); //"null undefined"
+
+/*最後に、真偽値への変換については少し興味深い仕様となっています
+真偽値は true と false の2種類しかありませんから、どんな値も真偽値に変換するとそのどちらかになります
+その規則は以下のようになっています
+ほとんどの値は true になりますが一部 false となる値があります
+具体的には 0 0n Nan "" null undefined*/
+
+//数値             0 と NaN が false になり、他は true になる
+//BigInt           0n が false となり、他は true となる
+//文字列           空文字列 "" だけが false となり、他は true になる
+//null undefined  false
+//オブジェクト     すべて true になる
+
+console.log(Boolean(123)); //true
+console.log(Boolean(0));   //false
+console.log(Boolean(1n));  //true
+console.log(Boolean(0n));  //false
+console.log(Boolean(""));  //false
+console.log(Boolean("foobar"));  //true
+console.log(Boolean(null));  //false
+console.log(Boolean(undefined));  //false
