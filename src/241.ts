@@ -25,3 +25,19 @@ const res1 = 5 - 1.86; //number
 console.log(res1);
 const res2 = 2n ** 5n; //BigInt
 console.log(res2);
+
+/*
+算術演算子の右側の型は any, number, bigint, enum でなければならない
+241.ts:30:19 - error TS2363: The right-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+
+const str: String = '123';
+console.log(123 * str);
+*/
+
+/*算術演算子の優先順位
+演算子には優先順位が存在する
+1 + 2 * 3 の場合は 1 + (2 * 3)と解釈されて 7 になる*/
+
+console.log(5 - 3 - 1); //1
+console.log((5 - 3) - 1); //1
+console.log(5 - (3 - 1)); //3
