@@ -27,3 +27,19 @@ console.log(left4 <= right4); //false
 その場合、各文字のコードユニットを要素とする辞書順で文字列が比較されます
 この目的で比較演算子を用いるコードは非常に珍しく、出会うのには数年に1回かもしれませんが、頭の片隅にとどめておいて損はないでしょう*/
 
+//大小比較の例
+// true が表示される a は o よりもコードポイントが小さいため
+console.log("apple" < "orange");
+
+//一致判定の例
+const left: number = 1;
+const right: number = 2;
+
+console.log(left === right); //false
+console.log(left !== right); //true
+
+/*一致判定には == と === の2種類がある
+!= と !== はそれぞれの否定形
+=== は等しければ true 等しくなければ false
+!== はその逆*/
+
