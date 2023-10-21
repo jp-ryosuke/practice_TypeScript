@@ -43,3 +43,34 @@ console.log(left !== right); //true
 === は等しければ true 等しくなければ false
 !== はその逆*/
 
+//=== の複雑な例
+
+import { createInterface } from 'readline';
+
+const rl = createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.question('パスワードを入力してください: ', (password) =>{
+    if(password === 'hogehoge'){
+        console.log('ようこそ');
+    }else{
+        console.log('誰？');
+    }
+    rl.close();
+});
+
+// == と != は基本的には使うべきではない
+// == と === の違い
+
+const str: any = "3";
+
+console.log(str == 3); //true
+console.log(str === 3); //false
+
+/*ただし == を使用して良い場面が1つだけある
+それは x == null の比較を行う場合
+x == null の比較は x が null または undefined であるという意味の比較になる
+両者を一緒に扱いたい場合は、この記法を用いる
+逆に null と undefined を厳密に区分したい場合は === を使う*/
