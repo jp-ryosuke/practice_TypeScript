@@ -30,3 +30,26 @@ const obj8 = {
 };
 
 console.log(obj8); //{ foo: -9999, bar: 456, baz: 789 }
+
+
+//obj9 よりも前に foo:-9999 を億のはコンパイルエラーになる
+//上書きされると決まっているのにそれより前に置くのは無意味なので
+
+const obj9 = {
+    foo: 123,
+    bar: 456,
+    baz: 789,
+};
+
+//'foo' is specified more than once, so this usage will be overwritten.
+const obj10 = {
+    //foo: -9999,
+    ...obj9,
+};
+
+
+
+
+//スプレッド構文によって行われるのはプロパティのコピーであるという点に注意
+//コピー元のオブジェクトのプロパティを変更してもコピー先のオブジェクトには影響しない
+//詳細は 3.1.6
